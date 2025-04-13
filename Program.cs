@@ -1,38 +1,37 @@
-﻿
-// LIST
+﻿Dictionary<string, string> studentsAndDislike = new Dictionary<string, string>();
 
-List<string> fruits = new List<string>();
-fruits.Add("Orange");
-fruits.Add("Banana");
-fruits.Add("Mango");
-fruits.Add("Watermelon");
-fruits.Add("Pineapple");
-fruits.Add("Apple");
-fruits.Add("Cherry");
-fruits.Add("Pawpaw");
-fruits.Add("Lemon");
-fruits.Add("Strawberry");
-fruits.Add("Blueberry");
-fruits.Add("Peach");
+studentsAndDislike["Victor"] = "Victor hates fish";
+studentsAndDislike["Anita"] = "Anita hates Money";
+studentsAndDislike["Caleb"] = "Caleb hates Trekking";
+studentsAndDislike["Felix"] = "Felix hates playing";
+studentsAndDislike["Victor"] = "Jonathan hates NYSC";
 
-Console.WriteLine($"The total fruits on the list is equal to {fruits.Count}");
+
+Console.WriteLine(studentsAndDislike["Felix"]);
 Console.WriteLine();
 
-foreach (string fruit in fruits)
+Dictionary<int, string> scores = new Dictionary<int, string>();
+scores[98] = "first position";
+scores[90] = "second position";
+scores[86] = "third position";
+
+Console.WriteLine("We only give prices to the top " + scores.Count);
+Console.WriteLine();
+
+
+Dictionary<string, decimal> fruitPrices = new Dictionary<string, decimal>();
+fruitPrices.Add("Orange", 500);
+fruitPrices.Add("Banana", 800);
+fruitPrices.Add("Mango", 200);
+fruitPrices.Add("Watermelon", 1500);
+fruitPrices.Add("Pineapple", 650);
+fruitPrices.Add("Apple", 300);
+fruitPrices.Add("cherry", 200);
+fruitPrices.Add("Pawpaw", 900);
+
+
+foreach (var fruitPrice in fruitPrices)
 {
-    Console.WriteLine(fruit + " is sweet");
-}
-Console.WriteLine();
-
-Console.WriteLine(fruits.ElementAt(3));
-Console.WriteLine();
-
-fruits.RemoveAt(5);
-Console.WriteLine($"The total fruits on the list is equal to {fruits.Count}");
-Console.WriteLine();
-foreach (string fruit in fruits)
-{
-    Console.WriteLine(fruit + " is sweet");
+    Console.WriteLine("For " + fruitPrice.Key + " the price is " + "$" + fruitPrice.Value);
 }
 Console.ReadKey();
-
